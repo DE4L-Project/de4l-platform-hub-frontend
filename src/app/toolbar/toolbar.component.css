@@ -1,0 +1,7 @@
+mat-toolbar .mat-toolbar-row {
+  height: 128px;
+}
+
+.logo {
+  padding-top: 10px;
+}

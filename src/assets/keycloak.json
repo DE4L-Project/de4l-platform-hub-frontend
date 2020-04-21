@@ -1,0 +1,6 @@
+{
+  "realm" : "experimental",
+  "auth-server-url" : "http://auth.localhost:11020/auth",
+  "resource" : "sim-frontend",
+  "token-store": "cookie"
+}

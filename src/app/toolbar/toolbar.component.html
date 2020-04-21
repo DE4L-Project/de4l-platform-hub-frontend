@@ -1,6 +1,34 @@
-<mat-toolbar>
-  <span>My Application</span>
-  <button mat-button>Test</button>
-  <span fxFlex></span>
-  <span>Right</span>
+<mat-toolbar multiple>
+  <mat-toolbar-row>
+    <div fxFlex="33">
+      <img class="logo" src="assets/DE4L-logo.png" height="120"/>
+    </div>
+    <div fxLayoutAlign="center center" fxFlex="33">
+      <h1>DE4L</h1>
+    </div>
+    <div fxLayoutAlign="end center" fxFlex>
+      <div *ngIf="!isLoggedIn$.getValue()">
+        <button mat-flat-button color="primary" (click)="onLoginClick($event)">LOGIN</button>
+      </div>
+      <div *ngIf="isLoggedIn$.getValue() && user">
+        <button mat-flat-button color="primary" [matMenuTriggerFor]="toolbarMenu">
+          {{user.name}} <{{user.username}}>
+          <mat-icon>expand_more</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-toolbar-row>
 </mat-toolbar>
+<mat-menu #toolbarMenu="matMenu">
+  <a href="http://localhost:11020/auth/realms/experimental/account/" mat-menu-item>
+    <mat-icon>account_circle</mat-icon>
+    Account Settings
+  </a>
+  <button mat-menu-item (click)="onLogoutClicked($event)">
+    <mat-icon>power_settings_new</mat-icon>
+    Logout
+  </button>
+  <button mat-menu-item (click)="onJWTTokenInfoClicked($event)">
+    <mat-icon>adb</mat-icon>
+    <i>JWT Token Info</i></button>
+</mat-menu>
