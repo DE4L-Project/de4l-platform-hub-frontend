@@ -42,13 +42,13 @@ export class AuthService {
   login(): void {
     this.deleteTokenInLocalStorage();
     this.keycloakService.login({
-      redirectUri: this.configService.config.baseUrl
+      redirectUri: this.configService.appConfig.baseUrl
     });
   }
 
   logout(): void {
     this.deleteTokenInLocalStorage();
-    this.keycloakService.logout(this.configService.config.baseUrl);
+    this.keycloakService.logout(this.configService.appConfig.baseUrl);
   }
 
   getUser(): Observable<User> {

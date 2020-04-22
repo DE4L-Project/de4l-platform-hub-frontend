@@ -26,7 +26,7 @@ export class AppBootstrap {
     return fromPromise(keycloakService
       .init(
         {
-          config: configService.config.keycloakJsonUrl,
+          config: configService.appConfig.keycloakJsonUrl,
           initOptions: initOptions,
           loadUserProfileAtStartUp: false
         }
