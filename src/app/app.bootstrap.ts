@@ -2,10 +2,15 @@ import {KeycloakService} from "keycloak-angular";
 import {TokenInformation} from "./auth/shared/token.model";
 import {KeycloakInitOptions} from "keycloak-angular/public_api";
 import {AuthService} from "./auth/auth.service";
+import {ConfigService} from "./config/config.service";
+import {Observable} from "rxjs";
+import {fromPromise} from "rxjs/internal-compatibility";
+import {catchError, tap} from "rxjs/operators";
 
 export class AppBootstrap {
 
-  bootstrapKeycloak(keycloakService: KeycloakService): Promise<any> {
+  bootstrapKeycloak(keycloakService: KeycloakService, configService: ConfigService): Observable<boolean> {
+
     let initOptions: KeycloakInitOptions = {};
 
     const token = this.getTokenFromLocalStorage();
@@ -18,20 +23,19 @@ export class AppBootstrap {
       }
     }
 
-    return keycloakService
+    return fromPromise(keycloakService
       .init(
         {
-          config: "assets/keycloak.json",
+          config: configService.config.keycloakJsonUrl,
           initOptions: initOptions,
           loadUserProfileAtStartUp: false
         }
+      ))
+      .pipe(
+        tap(() => {
+          console.log("[AUTH] Initialization finished.");
+        })
       )
-      .then(() => {
-        console.log("[AUTH] Initialization finished.");
-      })
-      .catch((error) => {
-        console.error(error);
-      })
   }
 
   getTokenFromLocalStorage(): TokenInformation {

@@ -2,12 +2,12 @@ import {Injectable} from '@angular/core';
 import {KeycloakEventType, KeycloakService} from "keycloak-angular";
 import {KeycloakProfile, KeycloakTokenParsed} from "keycloak-js";
 import {User} from "./shared/user";
-import {interval, Observable, of, timer} from "rxjs";
+import {Observable, of, timer} from "rxjs";
 import {fromPromise} from "rxjs/internal-compatibility";
-import {filter, map, mergeMap} from "rxjs/operators";
+import {filter, map} from "rxjs/operators";
 import * as moment from "moment";
 import {TokenInformation} from "./shared/token.model";
-import {Token} from "@angular/compiler";
+import {ConfigService} from "../config/config.service";
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,7 @@ export class AuthService {
   // Refresh time before access token is expired.
   public static readonly REFRESH_BUFFER_SECONDS: number = 20;
 
-  constructor(protected keycloakService: KeycloakService) {
+  constructor(protected keycloakService: KeycloakService, protected configService: ConfigService) {
     this.registerKeycloakEvents();
   }
 
@@ -42,13 +42,13 @@ export class AuthService {
   login(): void {
     this.deleteTokenInLocalStorage();
     this.keycloakService.login({
-      redirectUri: "http://localhost:4200"
+      redirectUri: this.configService.config.baseUrl
     });
   }
 
-  logout(redirectUri?: string): void {
+  logout(): void {
     this.deleteTokenInLocalStorage();
-    this.keycloakService.logout(redirectUri);
+    this.keycloakService.logout(this.configService.config.baseUrl);
   }
 
   getUser(): Observable<User> {
@@ -65,6 +65,11 @@ export class AuthService {
 
   getKcToken(): KeycloakTokenParsed {
     return this.keycloakService.getKeycloakInstance().tokenParsed;
+  }
+
+  getKcAccountUrl(): string {
+    const kcInstance = this.keycloakService.getKeycloakInstance();
+    return `${kcInstance.authServerUrl}/realms/${kcInstance.realm}/account`;
   }
 
   private registerKeycloakEvents() {

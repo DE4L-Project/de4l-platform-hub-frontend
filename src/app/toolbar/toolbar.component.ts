@@ -5,7 +5,6 @@ import {TokenDialogComponent} from "../auth/token/token-dialog/token-dialog.comp
 import {KeycloakTokenParsed} from "keycloak-js";
 import {User} from "../auth/shared/user";
 import {BehaviorSubject, Subject} from "rxjs";
-import {fromPromise} from "rxjs/internal-compatibility";
 import {filter, mergeMap, tap} from "rxjs/operators";
 
 @Component({
@@ -51,6 +50,10 @@ export class ToolbarComponent implements OnInit {
   }
 
   onLogoutClicked($event: MouseEvent) {
-    this.authService.logout("http://localhost:4200");
+    this.authService.logout();
+  }
+
+  getKcAccountUrl(): string {
+    return this.authService.getKcAccountUrl();
   }
 }

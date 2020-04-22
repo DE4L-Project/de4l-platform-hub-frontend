@@ -20,7 +20,8 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <mat-menu #toolbarMenu="matMenu">
-  <a href="http://localhost:11020/auth/realms/experimental/account/" mat-menu-item>
+
+  <a [href]="getKcAccountUrl()" mat-menu-item>
     <mat-icon>account_circle</mat-icon>
     Account Settings
   </a>
