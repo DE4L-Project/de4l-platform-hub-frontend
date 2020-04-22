@@ -1,0 +1,17 @@
+
+mat-toolbar .mat-toolbar-row {
+  height: 128px;
+}
+
+.logo {
+  padding-top: 10px;
+}
+
+@mixin toolbar-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  mat-toolbar {
+    //background-color: mat-color($primary, 50) !important;
+  }
+}

@@ -1,0 +1,19 @@
+@import '~@angular/material/theming';
+@import 'palette';
+
+//@import 'app/footer/footer.component';
+@import 'app/toolbar/toolbar.component';
+@import 'app/app-list/app-list.component';
+
+@include mat-core();
+
+$de4l-app-primary: mat-palette($de4l-blue);
+$de4l-app-accent:  mat-palette($de4l-blue);
+
+$de4l-app-theme: mat-light-theme($de4l-app-primary, $de4l-app-accent);
+
+@include angular-material-theme($de4l-app-theme);
+
+//@include footer-theme($de4l-app-theme);
+@include toolbar-theme($de4l-app-theme);
+@include app-list-theme($de4l-app-theme);

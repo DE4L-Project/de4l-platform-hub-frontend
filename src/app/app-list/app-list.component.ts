@@ -4,7 +4,7 @@ import {AppItem} from "../app-item/shared/app-item";
 @Component({
   selector: 'de4l-app-list',
   templateUrl: './app-list.component.html',
-  styleUrls: ['./app-list.component.css']
+  styleUrls: ['./app-list.component.scss']
 })
 export class AppListComponent implements OnInit {
 

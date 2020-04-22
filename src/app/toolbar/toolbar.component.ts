@@ -11,7 +11,7 @@ import {filter, mergeMap, tap} from "rxjs/operators";
 @Component({
   selector: 'de4l-toolbar',
   templateUrl: './toolbar.component.html',
-  styleUrls: ['./toolbar.component.css']
+  styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent implements OnInit {
 
