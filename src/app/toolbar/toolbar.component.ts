@@ -39,13 +39,13 @@ export class ToolbarComponent implements OnInit {
   }
 
   onJWTTokenInfoClicked($event: MouseEvent) {
-    this.openTokenDialog(this.authService.getKcToken());
+    this.openTokenDialog(this.authService.getKcToken(), this.authService.getKcAccessTokenString());
   }
 
-  protected openTokenDialog(token: KeycloakTokenParsed) {
+  protected openTokenDialog(token: KeycloakTokenParsed, tokenString: string) {
     const dialogRef = this.dialog.open(TokenDialogComponent, {
       width: '600px',
-      data: token
+      data: {parsedAccessToken: token, accessToken: tokenString}
     });
   }
 

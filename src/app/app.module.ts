@@ -23,6 +23,7 @@ import {AppBootstrap} from "./app.bootstrap";
 import {HttpClientModule} from "@angular/common/http";
 import {ConfigService} from "./config/config.service";
 import {mergeMap} from "rxjs/operators";
+import {ClipboardModule} from "@angular/cdk/clipboard";
 
 function init(configService: ConfigService, keycloakService: KeycloakService): (() => Promise<any>) {
   return () =>
@@ -58,7 +59,8 @@ function init(configService: ConfigService, keycloakService: KeycloakService): (
     MatDialogModule,
     MatTreeModule,
     HttpClientModule,
-    KeycloakAngularModule
+    KeycloakAngularModule,
+    ClipboardModule
   ],
   providers: [
     {

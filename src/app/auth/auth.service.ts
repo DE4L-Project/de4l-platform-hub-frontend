@@ -63,6 +63,10 @@ export class AuthService {
       )
   }
 
+  getKcAccessTokenString(): string {
+    return this.keycloakService.getKeycloakInstance().token;
+  }
+
   getKcToken(): KeycloakTokenParsed {
     return this.keycloakService.getKeycloakInstance().tokenParsed;
   }

@@ -1,3 +1,6 @@
 <pre>
-{{ data | json}}
+{{ data.parsedAccessToken | json}}
 </pre>
+<button mat-raised-button color="primary" (click)="onCopyAccessToken($event)">
+  Copy Access Token
+</button>

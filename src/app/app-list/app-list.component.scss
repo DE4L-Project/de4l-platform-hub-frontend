@@ -4,6 +4,10 @@ de4l-app-item {
   max-width: 400px;
 }
 
+de4l-app-list {
+  background-color: red;
+}
+
 @mixin app-list-theme($theme) {
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
