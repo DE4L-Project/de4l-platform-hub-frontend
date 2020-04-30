@@ -25,8 +25,8 @@ export class ConfigService {
         }),
         map((response: any) => {
           this.appConfig = {
-            baseUrl: response.baseUrl,
-            keycloakJsonUrl: response.keycloakJsonUrl
+            baseUrl: response.configProperties.baseUrl,
+            keycloakJsonUrl: response.configProperties.keycloakJsonUrl
           }
           console.log(this.appConfig);
         })
