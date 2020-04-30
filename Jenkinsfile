@@ -1,5 +1,5 @@
 REPO="devdocker.wifa.uni-leipzig.de:5000"
-IMAGE_TAG = "de4l/app-hub-frontend.git"
+IMAGE_TAG = "de4l/app-hub-frontend"
 BUILD = BRANCH_NAME == 'master' ? 'latest' : BRANCH_NAME
 node('master') {
   checkout scm
