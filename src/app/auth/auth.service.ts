@@ -73,7 +73,7 @@ export class AuthService {
 
   getKcAccountUrl(): string {
     const kcInstance = this.keycloakService.getKeycloakInstance();
-    return `${kcInstance.authServerUrl}/realms/${kcInstance.realm}/account`;
+    return `${kcInstance.authServerUrl}realms/${kcInstance.realm}/account`;
   }
 
   private registerKeycloakEvents() {
