@@ -10,15 +10,15 @@ export class AppListComponent implements OnInit {
 
   apps: AppItem[] = [
     {
-      name: "Simulator",
-      subtitle: "Angular 8",
-      linkUrl: "http://app.local:4200",
+      name: "Sensor Analytics",
+      subtitle: "Environmental Sensor Data Map Application",
+      linkUrl: "https://sensor.de4l.io/",
       description: "",
-      imageUrl: "assets/400x320.png",
+      imageUrl: "assets/400x320-sensor-map.png",
       iconUrl: "assets/angular.png"
     },
     {
-      name: "Sensor Data",
+      name: "Simulator",
       subtitle: "Angular 8",
       linkUrl: "http://app.local:4200",
       description: "",
