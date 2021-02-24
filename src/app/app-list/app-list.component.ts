@@ -11,11 +11,11 @@ export class AppListComponent implements OnInit {
   apps: AppItem[] = [
     {
       name: "Delivery Zone Data Management",
-      subtitle: "Application for managing address data and enhancing delivery process",
+      subtitle: "Application for managing address data",
       linkUrl: "https://de4l.iml.fraunhofer.de/",
       description: "",
       imageUrl: "assets/400x320-lieferzonen.png",
-      iconUrl: "assets/angular.png"
+      iconUrl: "assets/de4l-icon.png"
     },
     {
       name: "Sensor Analytics",
@@ -23,15 +23,15 @@ export class AppListComponent implements OnInit {
       linkUrl: "https://sensor.de4l.io/",
       description: "",
       imageUrl: "assets/400x320-sensor-map.png",
-      iconUrl: "assets/angular.png"
+      iconUrl: "assets/de4l-icon.png"
     },
     {
       name: "Sensor Monitoring",
-      subtitle: "Angular 8",
-      linkUrl: "http://app.local:4200",
+      subtitle: "(Currently not publicly available)",
+      linkUrl: "",
       description: "",
-      imageUrl: "assets/400x320.png",
-      iconUrl: "assets/angular.png"
+      imageUrl: "assets/400x320-white.png",
+      iconUrl: "assets/de4l-icon.png"
     },
 
   ];
