@@ -1,3 +1,7 @@
 .header-image {
   background-size: cover;
 }
+
+.mat-card-actions {
+  text-align: center;
+}
