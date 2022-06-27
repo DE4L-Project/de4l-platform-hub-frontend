@@ -1,4 +1,4 @@
 {
   "configUrl": "@@DEFINE_CONFIG_URL@@",
-  "commit": "@@GIT_COMMIT_HASH@@"
+  "gitCommitHash": "@@GIT_COMMIT_HASH@@"
 }

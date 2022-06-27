@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ConfigService} from "../config/config.service";
 
 @Component({
   selector: 'de4l-footer',
@@ -9,10 +10,13 @@ export class FooterComponent implements OnInit {
 
   readonly date = new Date()
 
-  constructor() {
+  gitCommitHash : string = "";
+
+  constructor(protected configService: ConfigService) {
   }
 
   ngOnInit(): void {
+    this.gitCommitHash = this.configService.appConfig.gitCommitHash
   }
 
 }

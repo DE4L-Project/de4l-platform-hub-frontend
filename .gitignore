@@ -45,4 +45,6 @@ testem.log
 .DS_Store
 Thumbs.db
 /de4l-start-app.iml
-/src/config.json
+/src/assets/config.json
+/src/assets/keycloak.json
+/src/assets/remote-config.local.json

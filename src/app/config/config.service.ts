@@ -9,7 +9,7 @@ import {AppConfig} from "./app-config.interface";
 })
 export class ConfigService {
 
-  private static readonly CONFIG_BASE_FILE = "config.json";
+  private static readonly CONFIG_BASE_FILE = "assets/config.json";
 
   appConfig: AppConfig;
 
@@ -26,7 +26,8 @@ export class ConfigService {
         map((response: any) => {
           this.appConfig = {
             baseUrl: response.configProperties.baseUrl,
-            keycloakJsonUrl: response.configProperties.keycloakJsonUrl
+            keycloakJsonUrl: response.configProperties.keycloakJsonUrl,
+            gitCommitHash: response.configProperties.gitCommitHash
           }
           console.log(this.appConfig);
         })
