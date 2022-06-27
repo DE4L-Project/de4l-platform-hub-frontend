@@ -20,14 +20,19 @@ export class ConfigService {
   loadConfig(): Observable<void> {
     return this.http.get(ConfigService.CONFIG_BASE_FILE)
       .pipe(
-        mergeMap((response: any) => {
-          return this.http.get(response.configUrl);
+        mergeMap((localResponse: any) => {
+          return this.http.get(localResponse.configUrl).pipe(
+            map((configResponse: any) => {
+              configResponse.configProperties.gitCommitHash = localResponse.gitCommitHash
+              return configResponse
+            })
+          );
         }),
         map((response: any) => {
           this.appConfig = {
             baseUrl: response.configProperties.baseUrl,
             keycloakJsonUrl: response.configProperties.keycloakJsonUrl,
-            gitCommitHash: response.gitCommitHash
+            gitCommitHash: response.configProperties.gitCommitHash
           }
           console.log(this.appConfig);
         })
