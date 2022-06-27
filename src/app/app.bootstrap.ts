@@ -1,11 +1,11 @@
 import {KeycloakService} from "keycloak-angular";
 import {TokenInformation} from "./auth/shared/token.model";
-import {KeycloakInitOptions} from "keycloak-angular/public_api";
 import {AuthService} from "./auth/auth.service";
 import {ConfigService} from "./config/config.service";
 import {Observable} from "rxjs";
 import {fromPromise} from "rxjs/internal-compatibility";
 import {catchError, tap} from "rxjs/operators";
+import {KeycloakInitOptions} from "keycloak-js";
 
 export class AppBootstrap {
 

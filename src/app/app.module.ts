@@ -37,43 +37,40 @@ function init(configService: ConfigService, keycloakService: KeycloakService): (
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ToolbarComponent,
-    FooterComponent,
-    AppListComponent,
-    AppItemComponent,
-    TokenDialogComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatButtonModule,
-    FlexModule,
-    MatMenuModule,
-    MatIconModule,
-    MatDividerModule,
-    MatCardModule,
-    MatDialogModule,
-    MatTreeModule,
-    HttpClientModule,
-    KeycloakAngularModule,
-    ClipboardModule
-  ],
-  providers: [
-    {
-      provide: APP_INITIALIZER,
-      useFactory: init,
-      multi: true,
-      deps: [ConfigService, KeycloakService]
-    },
-  ],
-  bootstrap: [AppComponent],
-  entryComponents: [
-    TokenDialogComponent
-  ]
+    declarations: [
+        AppComponent,
+        ToolbarComponent,
+        FooterComponent,
+        AppListComponent,
+        AppItemComponent,
+        TokenDialogComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatButtonModule,
+        FlexModule,
+        MatMenuModule,
+        MatIconModule,
+        MatDividerModule,
+        MatCardModule,
+        MatDialogModule,
+        MatTreeModule,
+        HttpClientModule,
+        KeycloakAngularModule,
+        ClipboardModule
+    ],
+    providers: [
+        {
+            provide: APP_INITIALIZER,
+            useFactory: init,
+            multi: true,
+            deps: [ConfigService, KeycloakService]
+        },
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 
