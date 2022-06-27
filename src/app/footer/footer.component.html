@@ -1,19 +1,24 @@
-<div class="mat-elevation-z4">
-  <mat-divider></mat-divider>
-  <div class="content" fxLayout="row">
-    <div class="copyright" fxLayout fxLayoutAlign="start center">
-      <a mat-button target="_blank" href="https://www.infai.org">
-        &copy; {{ date | date:'yyyy'}} InfAI Management GmbH
-      </a>
-    </div>
-    <div fxLayout fxLayoutAlign="center center" fxLayoutGap="20px" fxFlex>
+<div id="footer">
+  <div id="footer-content" fxLayout="row" fxLayout.lt-md="column">
+    <div fxFlex="33"></div>
+    <div fxFlex id="footer-links" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center"
+         fxLayoutGap="20px">
       <a mat-button target="_blank" href="https://de4l.io">Projektwebseite</a>
       <a mat-button target="_blank" href="https://de4l.io/impressum/">Impressum</a>
       <a mat-button target="_blank" href="https://de4l.io/datenschutzerklaerung/">Datenschutzerklärung</a>
     </div>
-    <div class="logos" fxLayoutAlign="end center">
-      <img src="assets/SDW_logo.png"/>
-      <img src="assets/BMWi-logo.jpg"/>
+    <div fxFlex="33" fxLayout="row" fxLayoutAlign="end center" fxLayout.lt-md="column">
+      <div class="logos" fxLayout fxLayoutAlign="end center" fxLayoutAlign.lt-md="center center">
+        <img src="assets/sdw_logo_200x200.png"/>
+      </div>
+      <div class="logos" fxLayout fxLayoutAlign="end center" fxLayoutAlign.lt-md="center center">
+        <img src="assets/bmwk_logo_eng_200x200.png"/>
+      </div>
     </div>
+  </div>
+  <div class="copyright" fxLayout fxLayoutAlign="center center">
+    <a mat-button target="_blank" href="https://www.infai.org" fxFlex>
+      &copy; {{ date | date:'yyyy'}} InfAI Management GmbH
+    </a>
   </div>
 </div>

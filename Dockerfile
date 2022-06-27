@@ -1,7 +1,6 @@
-FROM node:14.0 AS compile-image
+FROM node:18 AS compile-image
 
 ENV PATH="./node_modules/.bin:$PATH"
-
 
 COPY . /app
 WORKDIR /app
@@ -9,7 +8,7 @@ RUN npm install
 
 RUN ng build --prod
 
-FROM nginx:1.18
+FROM nginx:1.23
 ENV HTML_DIR=/usr/share/nginx/html
 
 #COPY docker/nginx.conf /etc/nginx/conf.d/default.conf

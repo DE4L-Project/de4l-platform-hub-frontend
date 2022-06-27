@@ -1,6 +1,8 @@
 
-mat-toolbar .mat-toolbar-row {
-  height: 128px;
+#toolbar .toolbar-row {
+  //height: 128px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .logo {
@@ -13,11 +15,13 @@ h1 {
   text-transform: uppercase;
 }
 
+#toolbar {
+  background-color: white !important;
+  border-bottom: 1px solid #1e90ff;
+  padding: 0 20px;
+}
+
 @mixin toolbar-theme($theme) {
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
-
-  mat-toolbar {
-    //background-color: mat-color($primary, 50) !important;
-  }
 }

@@ -1,9 +1,0 @@
-version: "2"
-services:
-  app:
-    image: "de4l-start-app"
-    env_file:
-      - ./docker/.env
-    ports:
-    - 11040:80
-#    entrypoint: ["/bin/sh","-c", "sleep 10h"]

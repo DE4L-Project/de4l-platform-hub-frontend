@@ -12,7 +12,7 @@ export class AppListComponent implements OnInit {
     {
       name: "Delivery Zone Data Management",
       subtitle: "Application for managing address data and enhancing delivery process",
-      linkUrl: "https://de4l.iml.fraunhofer.de/",
+      linkUrl: "https://dev-de4l.iml.fraunhofer.de/lzm/",
       description: "",
       imageUrl: "assets/400x320-lieferzonen.png",
       iconUrl: "assets/angular.png"
@@ -22,18 +22,25 @@ export class AppListComponent implements OnInit {
       subtitle: "Environmental Sensor Data Map Application",
       linkUrl: "https://sensor.de4l.io/",
       description: "",
-      imageUrl: "assets/400x320-sensor-map.png",
+      imageUrl: "assets/de4l-sensor-analytics.png",
       iconUrl: "assets/angular.png"
     },
     {
-      name: "Sensor Monitoring",
-      subtitle: "Angular 8",
+      name: "Sensor Monitoring (internal only)",
+      subtitle: "Application for Sensor Things API",
+      linkUrl: "http://de4l-sensor-things-de4l-sta-frontend-1.rancher.internal/",
+      description: "",
+      imageUrl: "assets/de4l-sensor-monitoring_400x320.png",
+      iconUrl: "assets/angular.png"
+    },
+    {
+      name: "Routing (WIP)",
+      subtitle: "Prototype for healthy routing",
       linkUrl: "http://app.local:4200",
       description: "",
       imageUrl: "assets/400x320.png",
       iconUrl: "assets/angular.png"
     },
-
   ];
 
   constructor() {

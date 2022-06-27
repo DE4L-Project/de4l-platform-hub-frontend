@@ -1,3 +1,18 @@
 .header-image {
   background-size: cover;
 }
+
+
+/*have at least two lines for subtitle*/
+.mat-card-subtitle {
+  min-height: 34px;
+}
+
+.mat-card-image {
+  border-top: #1d8ef1 2px solid;
+  border-bottom: #1d8ef1 2px solid;
+}
+
+.content {
+  padding: 10px;
+}

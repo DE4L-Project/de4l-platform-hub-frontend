@@ -1,7 +1,13 @@
 @import '~@angular/material/theming';
 
-.content {
-  padding: 10px;
+#footer-content {
+  background-color: white !important;
+  border-top: 1px solid #1e90ff;
+  padding: 0 20px;
+}
+
+#footer-links {
+  margin-top: 20px;
 }
 
 .logos {
@@ -12,6 +18,8 @@
   font-size: 16px;
   color: gray;
 }
+
+
 
 //// Define a mixin that accepts a theme and outputs the theme-specific styles.
 //@mixin footer-theme($theme) {

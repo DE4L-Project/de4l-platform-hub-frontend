@@ -1,12 +1,12 @@
-<mat-toolbar class="mat-elevation-z4">
-  <mat-toolbar-row>
-    <div fxFlex="33">
-      <img class="logo" src="assets/DE4L-logo.png" height="120"/>
+<div id="toolbar">
+  <div class="toolbar-row" fxLayout="row" fxLayout.lt-md="column">
+    <div fxLayout fxFlex="33" fxLayoutAlign.lt-md="center center">
+      <img class="logo" src="assets/DE4L-logo.png" height="100"/>
     </div>
-    <div fxLayoutAlign="center center" fxFlex="33">
+    <div fxLayoutAlign="center center" fxFlex="33" fxLayoutAlign.lt-md="center center">
       <h1>Platform Hub</h1>
     </div>
-    <div fxLayoutAlign="end center" fxFlex>
+    <div fxLayoutAlign="end center" fxFlex fxLayoutAlign.lt-md="center center">
       <div *ngIf="!isLoggedIn$.getValue()">
         <button mat-flat-button color="primary" (click)="onLoginClick($event)">LOGIN</button>
       </div>
@@ -17,10 +17,9 @@
         </button>
       </div>
     </div>
-  </mat-toolbar-row>
-</mat-toolbar>
+  </div>
+</div>
 <mat-menu #toolbarMenu="matMenu">
-
   <a [href]="getKcAccountUrl()" target="_blank" mat-menu-item>
     <mat-icon>account_circle</mat-icon>
     Account Settings

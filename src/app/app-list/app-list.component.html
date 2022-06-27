@@ -1,4 +1,8 @@
-<div class="content" fxLayoutAlign="center center" fxLayoutGap="40px" fxFill>
+<div class="content" fxLayoutAlign="center center" fxLayoutGap="40px" fxFill
+     fxLayout="row"
+     fxLayout.lt-md="column"
+>
   <de4l-app-item [app]="app" *ngFor="let app of apps">
   </de4l-app-item>
 </div>
+
