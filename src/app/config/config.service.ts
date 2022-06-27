@@ -27,7 +27,7 @@ export class ConfigService {
           this.appConfig = {
             baseUrl: response.configProperties.baseUrl,
             keycloakJsonUrl: response.configProperties.keycloakJsonUrl,
-            gitCommitHash: response.configProperties.gitCommitHash
+            gitCommitHash: response.gitCommitHash
           }
           console.log(this.appConfig);
         })
