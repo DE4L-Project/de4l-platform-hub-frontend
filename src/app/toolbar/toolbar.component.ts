@@ -45,6 +45,7 @@ export class ToolbarComponent implements OnInit {
   protected openTokenDialog(token: KeycloakTokenParsed, tokenString: string) {
     const dialogRef = this.dialog.open(TokenDialogComponent, {
       width: '600px',
+      maxHeight: '80%',
       data: {parsedAccessToken: token, accessToken: tokenString}
     });
   }

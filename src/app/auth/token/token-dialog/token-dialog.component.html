@@ -1,6 +1,6 @@
-<pre>
-{{ data.parsedAccessToken | json}}
-</pre>
+<div class="dialog-content">
+  <pre id="token-information">{{ data.parsedAccessToken | json}}</pre>
+</div>
 <button mat-raised-button color="primary" (click)="onCopyAccessToken($event)">
   Copy Access Token
 </button>
