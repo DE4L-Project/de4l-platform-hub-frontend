@@ -1,3 +1,4 @@
+@use '~@angular/material' as mat;
 @import '~@angular/material/theming';
 
 de4l-app-item {
@@ -16,6 +17,6 @@ de4l-app-list {
   $accent: map-get($theme, accent);
 
   de4l-app-list {
-    background-color: mat-color($primary, 50) !important;
+    background-color: mat.get-color-from-palette($primary, 50) !important;
   }
 }
