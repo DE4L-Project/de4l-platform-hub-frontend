@@ -14,7 +14,7 @@ ENV HTML_DIR=/usr/share/nginx/html
 #COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=compile-image /app/dist/de4l-start-app $HTML_DIR
 COPY docker/entrypoint.sh /tmp/
-COPY docker/config.template.json /tmp/
+COPY docker/init-properties.template.json /tmp/
 
 RUN chmod +x /tmp/entrypoint.sh
 
