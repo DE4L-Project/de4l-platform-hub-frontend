@@ -9,7 +9,7 @@ import {AppConfig} from "./app-config.interface";
 })
 export class ConfigService {
 
-  private static readonly CONFIG_BASE_FILE = "assets/config.json";
+  private static readonly CONFIG_BASE_FILE = "assets/init-properties.json";
 
   appConfig: AppConfig;
 

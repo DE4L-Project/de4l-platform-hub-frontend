@@ -48,5 +48,6 @@ Thumbs.db
 /de4l-start-app.iml
 /src/assets/config.json
 /src/assets/keycloak.json
-/src/assets/remote-config.local.json
+/src/assets/remote-config.json
 /.angular/
+/src/assets/init-properties.json

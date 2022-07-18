@@ -7,11 +7,11 @@ mkdir -p $HTML_DIR/assets/
 
 # Recreate config on each start
 rm -f $HTML_DIR/assetsconfig.json
-cp /tmp/config.template.json $HTML_DIR/assets/config.json
+cp /tmp/init-properties.template.json $HTML_DIR/assets/init-properties.json
 
 echo "Setting config..."
 
-sed -i "s/@@DEFINE_CONFIG_URL@@/$CONFIG_URL_ESCAPED/g" $HTML_DIR/assets/config.json
+sed -i "s/@@DEFINE_CONFIG_URL@@/$CONFIG_URL_ESCAPED/g" $HTML_DIR/assets/init-properties.json
 
 echo "Starting nginx..."
 

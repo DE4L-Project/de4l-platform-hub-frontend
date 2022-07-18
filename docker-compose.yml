@@ -1,0 +1,9 @@
+version: "2"
+services:
+  de4l-start-hub:
+    build: .
+    ports:
+      - "4200:80"
+    environment:
+      CONFIG_URL: http://localhost:4200/config
+

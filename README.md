@@ -1,27 +1,81 @@
-# De4lStartApp
+# DE4L Start Hub
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.14.
+![Project Logo][project-logo]
 
-## Development server
+![Made with love in Germany](https://madewithlove.now.sh/de?heart=true&colorA=%23000000&colorB=%23299fc7&template=for-the-badge)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Motivation
+Angular App for DE4L which is used as entrypoint for the DE4L platform applications.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![App Screenshots][app-screenshot]
 
 ## Build
+```
+(Local)
+npm install
+ng build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+(Docker)
+docker build -t de4l-start-hub .
+docker run -p 4200:80 de4l-start-hub
+```
 
-## Running unit tests
+## Configuration
+ The app loads configuration on initialization remotely e.g. from a backend service providing configuration. Files can be provided on the same server as well. 
+ The app expects `assets/init-properties.json` containing the following information:
+ 
+```json
+{
+  "configUrl": "assets/remote-config.json",
+  "gitCommitHash": "local-dev"
+}
+```
+Using Docker deployment the file is created automatically using environment variables (`$CONFIG_URL`). Git commit hash is provided by Jenkins on build time.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Example remote-config.json:
+```json
+{
+  "configProperties": {
+    "baseUrl": "http://localhost:4200/",
+    "keycloakJsonUrl": "assets/keycloak.json"
+  }
+}
+```
 
-## Running end-to-end tests
+## Technology Overview
+- [Angular](https://angular.io/)
+- [Angular Material](https://material.angular.io/)
+- [KeycloakJS](https://www.npmjs.com/package/keycloak-js) & [Keycloak Angular](https://www.npmjs.com/package/keycloak-angular)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+[project-logo]: documentation/project-logo_1080p.png "DE4L Project Logo"
+[app-screenshot]: documentation/deal-app-hub-screenshot.png "DE4L App Hub Screenshot"
 
-## Further help
+## License
+```text
+MIT License
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Copyright (c) 2022 InfAI Management GmbH
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+## Legal
+
+- Google Play and the Google Play logo are trademarks of Google LLC.
+- All trademarks are property of their respective owners.
